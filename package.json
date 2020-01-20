@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "start": "yarn start:server & yarn test:load",
+    "start:server": "node --max-old-space-size=40 index.js",
+    "test:load": "loadtest -c 5 -t 600 --rps 1000 http://localhost:3000/"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^19.0.5",
+    "loadtest": "^4.1.0",
+    "rxjs": "^6.5.4"
+  },
+  "engines": {
+    "node": "12.14.1",
+    "yarn": "1.21.1"
+  }
+}
